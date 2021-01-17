@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
-export default function Header({ navigateToAddContent }) {
+export default function Header({ togglePause, stopPlaying, navigateToAddContent }) {
+
     return (
         <View style={styles.header}>
             <Text style={styles.headerText}>Hall of Music</Text>
@@ -12,11 +13,11 @@ export default function Header({ navigateToAddContent }) {
                 <MaterialCommunityIcons name="music-note-plus" size={29} color="white" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.headerStopTouchable}>
+            <TouchableOpacity style={styles.headerStopTouchable} onPress={() => stopPlaying()}>
                 <FontAwesome name="stop-circle" size={29} color="white" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.headerPauseTouchable}>
+            <TouchableOpacity style={styles.headerPauseTouchable} onPress={() => togglePause()}>
                 <FontAwesome name="pause-circle" size={29} color="white" />
             </TouchableOpacity>
         </View>

@@ -1,14 +1,18 @@
 module.exports = {
     container: {
         backgroundColor: "#292929",
-        minHeight: 60,
+        minHeight: 120,
         flex: 1,
         flexDirection: "row",
-        alignItems: "center"
+        justifyContent: "center",
+        alignItems: "center",
+        borderBottomWidth: 3,
+        borderBottomColor: "#383838"
     },
 
     textView: {
-        flex: 1
+        flex: 1,
+        marginLeft: 5
     },
 
     trackNameText: {
