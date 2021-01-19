@@ -18,7 +18,7 @@ export default function Header({ togglePause, stopPlaying, navigateToAddContent 
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.headerPauseTouchable} onPress={() => togglePause()}>
-                <FontAwesome name="pause-circle" size={29} color="white" />
+                <FontAwesome name="play-circle" size={29} color="white" />
             </TouchableOpacity>
         </View>
     )

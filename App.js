@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Home from './src/pages/Home'
 import AddContent from './src/pages/AddContent'
 
-export default function App({ navigation }) {
+export default function App() {
   const requestStoragePermission = async () => {
     await PermissionsAndroid.requestMultiple([
       'android.permission.READ_EXTERNAL_STORAGE',

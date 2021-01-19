@@ -10,37 +10,10 @@ import Playlists from './Playlists'
 import Header from '../../components/Header'
 
 export default function Home({ navigation }) {
-    const [isPlaying, setIsPlaying] = useState(true)
-    const [toggleControlsVisible, setToggleControlsVisible] = useState(false)
-
     const Tab = createBottomTabNavigator()
-
-    const togglePause = () => {
-        if (!isPlaying) {
-            TrackPlayer.play()
-            setIsPlaying(true)
-        } else {
-            TrackPlayer.pause()
-            setIsPlaying(false)
-        }
-    }
-
-    const stopPlaying = () => {
-        TrackPlayer.stop()
-        TrackPlayer.destroy()
-        setIsPlaying(false)
-    }
 
     return (
         <View style={{ flex: 1, width: "100%" }}>
-            <Header
-                togglePause={togglePause}
-                toggleControlsVisible={true}
-                stopPlaying={stopPlaying}
-                isPlaying={isPlaying}
-                navigateToAddContent={() => navigation.navigate('AddContent')}
-            />
-
             <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
